@@ -32,7 +32,7 @@ describe('body encoding', function() {
   var pngData = new Buffer(pngHex, 'hex');
 
   it('allow raw data', function(done) {
-    var filename = os.tmpdir() + '/express-http-proxy-test-' + (new Date()).getTime() + '-png-transparent.png';
+    var filename = os.tmpdir() + '/express-http-proxy-async-test-' + (new Date()).getTime() + '-png-transparent.png';
     var app = express();
 
     app.use(proxy('localhost:8109', {
@@ -65,7 +65,7 @@ describe('body encoding', function() {
 
   describe('when user sets parseReqBody', function() {
     it('should not parse body', function(done) {
-      var filename = os.tmpdir() + '/express-http-proxy-test-' + (new Date()).getTime() + '-png-transparent.png';
+      var filename = os.tmpdir() + '/express-http-proxy-async-test-' + (new Date()).getTime() + '-png-transparent.png';
       var app = express();
       app.use(proxy('localhost:8109', {
         parseReqBody: false,
@@ -93,7 +93,7 @@ describe('body encoding', function() {
       });
     });
     it('should not fail on large limit', function(done) {
-      var filename = os.tmpdir() + '/express-http-proxy-test-' + (new Date()).getTime() + '-png-transparent.png';
+      var filename = os.tmpdir() + '/express-http-proxy-async-test-' + (new Date()).getTime() + '-png-transparent.png';
       var app = express();
       app.use(proxy('localhost:8109', {
         parseReqBody: false,

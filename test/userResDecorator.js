@@ -189,7 +189,7 @@ describe('test userResDecorator on html response from github',function() {
   it('is able to read and manipulate the response', function(done) {
     this.timeout(15000);  // give it some extra time to get response
     var app = express();
-    app.use(proxy('https://github.com/villadora/express-http-proxy', {
+    app.use(proxy('https://github.com/OronNadiv/express-http-proxy-async', {
       userResDecorator: function(targetResponse, data) {
         data = data.toString().replace('DOCTYPE','WINNING');
         assert(data !== '');

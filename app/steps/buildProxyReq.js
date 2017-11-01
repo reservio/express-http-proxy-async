@@ -1,6 +1,6 @@
 'use strict';
 
-var debug = require('debug')('express-http-proxy');
+var debug = require('debug')('express-http-proxy-async');
 var requestOptions = require('../../lib/requestOptions');
 
 function buildProxyReq(Container) {

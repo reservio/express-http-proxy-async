@@ -28,7 +28,7 @@ describe('when skipToNextHandlerFilter is defined', function() {
 
   OUTCOMES.forEach(function(outcome) {
     describe('and returns ' + outcome.shouldSkip, function() {
-      it('express-http-proxy' + (outcome.shouldSkip ? ' skips ' : ' doesnt skip ') + 'to next()', function(done) {
+      it('express-http-proxy-async' + (outcome.shouldSkip ? ' skips ' : ' doesnt skip ') + 'to next()', function(done) {
 
         app.use('/proxy', proxy('http://127.0.0.1:12345', {
           skipToNextHandlerFilter: function(/*res*/) {

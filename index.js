@@ -17,7 +17,7 @@
 
 var ScopeContainer = require('./lib/scopeContainer');
 var assert = require('assert');
-var debug = require('debug')('express-http-proxy');
+var debug = require('debug')('express-http-proxy-async');
 
 var buildProxyReq                = require('./app/steps/buildProxyReq');
 var copyProxyResHeadersToUserRes = require('./app/steps/copyProxyResHeadersToUserRes');

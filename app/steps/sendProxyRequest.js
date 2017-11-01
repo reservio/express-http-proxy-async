@@ -35,7 +35,7 @@ function sendProxyRequest(Container) {
     // reject(error);
       if (err.code === 'ECONNRESET') {
         res.setHeader('X-Timout-Reason',
-          'express-http-proxy timed out your request after ' +
+          'express-http-proxy-async timed out your request after ' +
         options.timeout + 'ms.');
         res.writeHead(504, {'Content-Type': 'text/plain'});
         res.end();

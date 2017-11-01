@@ -31,7 +31,7 @@ describe('honors timeout option', function() {
     request(http)
       .get('/')
       .expect(408)
-      .expect('X-Timout-Reason', 'express-http-proxy timed out your request after 100 ms.')
+      .expect('X-Timout-Reason', 'express-http-proxy-async timed out your request after 100 ms.')
       .end(function() {
         done();
       });

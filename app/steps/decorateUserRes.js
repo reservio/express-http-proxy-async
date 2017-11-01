@@ -1,7 +1,7 @@
 'use strict';
 
 var as = require('../../lib/as.js');
-var debug = require('debug')('express-http-proxy');
+var debug = require('debug')('express-http-proxy-async');
 var zlib = require('zlib');
 
 function isResGzipped(res) {

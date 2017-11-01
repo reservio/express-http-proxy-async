@@ -1,13 +1,15 @@
-# express-http-proxy [![NPM version](https://badge.fury.io/js/express-http-proxy.svg)](http://badge.fury.io/js/express-http-proxy) [![Build Status](https://travis-ci.org/villadora/express-http-proxy.svg?branch=master)](https://travis-ci.org/villadora/express-http-proxy) [![Dependency Status](https://gemnasium.com/villadora/express-http-proxy.svg)](https://gemnasium.com/villadora/express-http-proxy)
+# express-http-proxy-async [![NPM version](https://badge.fury.io/js/express-http-proxy-async.svg)](http://badge.fury.io/js/express-http-proxy-async) [![Build Status](https://travis-ci.org/OronNadiv/express-http-proxy-async.svg?branch=master)](https://travis-ci.org/OronNadiv/express-http-proxy-async)
 
-Express middleware to proxy request to another host and pass response back to original caller.
+Express middleware to proxy request to another host and pass response back to original caller.  
+  
+__This repository has been forked from [https://github.com/villadora/express-http-proxy](https://github.com/villadora/express-http-proxy).  Currently, the main difference between the two repositories is that this fork supports asynchronous promised based resolution of the host.__
 
 ## NOTE: version 1.0.0 released: breaking changes, transition guide at bottom of doc. 
 
 ## Install
 
 ```bash
-$ npm install express-http-proxy --save
+$ npm install express-http-proxy-async --save
 ```
 
 ## Usage
@@ -19,7 +21,7 @@ proxy(host, options);
 To proxy URLS starting with '/proxy' to the host 'www.google.com':
 
 ```js
-var proxy = require('express-http-proxy');
+var proxy = require('express-http-proxy-async');
 var app = require('express')();
 
 app.use('/proxy', proxy('www.google.com'));
@@ -174,7 +176,7 @@ E.g.,
   function coinToss() { return Math.random() > .5 }
   function getHost() {
     var host = coinToss() ? 'http://yahoo.com' : 'http://google.com';
-    return coinToss() ? Promise.resolve(host) : host;
+    return coinToss() ? Promise.resolve(host) : host; // <-- Asynchronous using promises
   }
   
   app.use(proxy(getHost, {
@@ -210,7 +212,7 @@ REMOVED:  See ```proxyReqOptDecorator``` and ```proxyReqBodyDecorator```.
 #### skipToNextHandlerFilter(supports Promise form)
 (experimental: this interface may change in upcoming versions) 
 
-Allows you to inspect the proxy response, and decide if you want to continue processing (via express-http-proxy) or call ```next()``` to return control to express.
+Allows you to inspect the proxy response, and decide if you want to continue processing (via express-http-proxy-async) or call ```next()``` to return control to express.
 
 ```js
 app.use('/proxy', proxy('www.google.com', {
@@ -376,11 +378,11 @@ app.use('/', proxy('httpbin.org', {
 The node-debug module is used to provide a trace debugging capability.
 
 ```
-DEBUG=express-http-proxy npm run YOUR_PROGRAM
-DEBUG=express-http-proxy npm run YOUR_PROGRAM  | grep 'express-http-proxy'   # to filter down to just these messages
+DEBUG=express-http-proxy-async npm run YOUR_PROGRAM
+DEBUG=express-http-proxy-async npm run YOUR_PROGRAM  | grep 'express-http-proxy-async'   # to filter down to just these messages
 ```
 
-Will trace the execution of the express-http-proxy module in order to aide debugging.
+Will trace the execution of the express-http-proxy-async module in order to aide debugging.
 
 
 
@@ -431,9 +433,9 @@ Resolution:  Simple update the name of either ```forwardPath``` or ```forwardPat
 
 ## When errors occur on your proxy server
 
-When your proxy server responds with an error, express-http-proxy returns a response with the same status code.  See ```test/catchingErrors``` for syntax details.
+When your proxy server responds with an error, express-http-proxy-async returns a response with the same status code.  See ```test/catchingErrors``` for syntax details.
 
-When your proxy server times out, express-http-proxy will continue to wait indefinitely for a response, unless you define a ```timeout``` as described above.
+When your proxy server times out, express-http-proxy-async will continue to wait indefinitely for a response, unless you define a ```timeout``` as described above.
 
 
 ## Questions

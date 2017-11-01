@@ -26,7 +26,7 @@ describe('when server responds with an error', function() {
   ];
 
   STATUS_CODES.forEach(function(statusCode) {
-    it('express-http-proxy responds with ' + statusCode.text +
+    it('express-http-proxy-async responds with ' + statusCode.text +
       'when proxy server responds ' + statusCode.code, function(done) {
       slowTarget = express();
       slowTarget.use(function(req, res) { res.sendStatus(statusCode.code); });

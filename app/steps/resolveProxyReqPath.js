@@ -1,7 +1,7 @@
 'use strict';
 
 var url = require('url');
-var debug = require('debug')('express-http-proxy');
+var debug = require('debug')('express-http-proxy-async');
 
 function defaultProxyReqPathResolver(req) {
   return url.parse(req.url).path;

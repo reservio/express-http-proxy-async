@@ -1,6 +1,6 @@
 {
-  "name": "express-http-proxy",
-  "version": "1.0.7",
+  "name": "express-http-proxy-async",
+  "version": "1.0.0",
   "description": "http proxy middleware for express",
   "engines": {
     "node": ">=4.0.0"
@@ -16,18 +16,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/villadora/express-http-proxy.git"
+    "url": "git://github.com/OronNadiv/express-http-proxy-async.git"
   },
   "keywords": [
-    "express-http-proxy"
+    "express-http-proxy",
+    "express-http-proxy-async"
   ],
   "author": {
-    "name": "villadora",
-    "email": "jky239@gmail.com"
+    "name": "Oron Nadiv",
+    "email": "oron@nadiv.us"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/villadora/express-http-proxy/issues"
+    "url": "https://github.com/OronNadiv/express-http-proxy-async/issues"
   },
   "devDependencies": {
     "body-parser": "^1.17.2",
@@ -67,6 +68,14 @@
     {
       "name": "Nik Krimm",
       "url": "https://github.com/monkpow"
+    },
+    {
+      "name": "villadora",
+      "email": "jky239@gmail.com"
+    },
+    {
+      "name": "Oron Nadiv",
+      "url": "https://github.com/OronNadiv"
     }
   ]
 }

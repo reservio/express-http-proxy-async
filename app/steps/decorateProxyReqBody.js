@@ -1,6 +1,6 @@
 'use strict';
 
-var debug = require('debug')('express-http-proxy');
+var debug = require('debug')('express-http-proxy-async');
 
 function defaultDecorator(proxyReqOptBody/*, userReq */) {
   return proxyReqOptBody;
